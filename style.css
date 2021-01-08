@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Krona One', sans-serif;
+}
+html{
+    font-size: 62.5%;
+}
+.background{
+    width: 100vw;
+    height: 100vh;
+    background: rgb(3, 226, 178);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    width: Calc(100vw - 40vw);
+    height: Calc(100vh - 30vh);
+    background: rgb(35, 56, 56);
+    border-radius: 1rem;
+    box-shadow: 20px 20px 20px  rgba(0,0,0,0.75);
+ 
+}
+.screen-body{
+    display: flex;
+    position: relative;
+}
+.screen-left{
+    flex-basis: 50%;
+}
+.app-title{
+    position: absolute;
+    top:14rem;
+    left:9rem;
+    font-size: 2rem;
+    color: rgb(128, 231, 209);
+    text-transform: uppercase;
+    position: relative;
+    letter-spacing: 1px;
+    line-height: 3rem;
+    animation: pulse 2s linear infinite;
+}
+@keyframes pulse{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.04);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+.app-title::before{
+    content: "";
+    position: absolute;
+    width: 32%;
+    height: 0.4rem;
+    background:   rgb(5, 201, 158);  
+    transform: rotate(-90deg);
+    top: 3.7rem;
+    left: -7rem;
+}
+.app-title:hover{
+    color: rgb(5, 201, 158) ;
+}
+.screen-right{
+    flex-basis: 50%;
+    padding: 2rem;
+   
+}
+.app-form input{
+    width: 90%;
+    margin-bottom: 2rem;
+    padding: 1.2rem 0;
+    color: #fff;
+    outline: none;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid rgb(107, 104, 104);
+  
+}
+.app-form input:hover{
+    border-bottom: 2px solid rgb(172, 169, 169) ;
+}
+.app-form ::placeholder{
+    color: #fff;
+    font-size: 1.2rem;
+}
+.btn{
+    background: transparent;
+    outline: none;
+    border: none;
+    color:  rgb(156, 241, 223) ;
+    font-size: 1.4rem;
+    padding: 1rem 0;
+    animation: pulse 2s linear infinite;
+    position: relative;
+}
+
+.btn:hover{
+    color: rgb(5, 201, 158)  ;
+}
+
+.showdata{
+    font-size: 1.5rem;
+    color: #fff;
+    padding: 0 1rem 0 2rem;
+    text-align: center;
+    line-height: 2.5rem;
+}
+

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grade Calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+
+    <div class="background">
+        <div class="container">
+            <div class="screen-body">
+                <div class="screen-left">
+                    <div class="app-title">
+                        Student <br> Grade <br> Calcy
+                    </div>
+                    <div class="animation"></div>
+                </div>
+                <div class="screen-right">
+                    <div class="app-form">
+                        <div>
+                            <input type="text" class="app-form-control" id="wd" placeholder="WEB PROGRAMMING :">
+                        </div>
+                        <div>
+                            <input type="text" class="app-form-control" id="maths" placeholder="MATHEMATICS :">
+                        </div>
+                        <div>
+                            <input type="text" class="app-form-control" id="comp" placeholder="COMPUTER :">
+                        </div>
+                        <div>
+                            <input type="text" class="app-form-control" id="science" placeholder="SCIENCE :">
+                        </div>
+                    </div>
+                    <input type="button" class="btn" onclick="calcy()" value="Show Percentage">
+                </div>
+            </div>
+            <div class="showdata">
+                <p id="showData"></p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script type="text/javascript">
+
+        const calcy = () => {
+            let wd = document.getElementById('wd').value;
+            let maths = document.getElementById('maths').value;
+            let comp = document.getElementById('comp').value;
+            let science = document.getElementById('science').value;
+            let grades = "";
+
+            let totalGrades = parseFloat(wd) + parseFloat(maths) + parseFloat(comp) + parseFloat(science);
+
+            let percentage = ((totalGrades / 400) * 100);
+
+            if ((wd > 100) && (maths > 100) && (comp > 100) && (science > 100)) {
+                document.getElementById('showData').innerHTML = "Value must be Less than 100."
+            }
+            else {
+                if ((percentage <= 100) && (percentage >= 80)) {
+                    grades = "A";
+                }
+                else if ((percentage <= 79) && (percentage >= 60)) {
+                    grades = "B";
+                }
+                else if ((percentage <= 59) && (percentage >= 40)) {
+                    grades = "C";
+                }
+                else {
+                    grades = "F";
+                }
+
+                if (percentage >= 40) {
+                    document.getElementById('showData').innerHTML = ` Out of 400 Your Total is :
+                                                           ${totalGrades} and percentage is : ${percentage} %. <br>
+                                                           Your Grade is : ${grades}.
+                                                           You are PASS... `
+                }
+                else {
+                    document.getElementById('showData').innerHTML = ` Out of 400 Your Total is :
+                                                           ${totalGrades} and percentage is : ${percentage} %. <br>
+                                                           Your Grade is : ${grades}.
+                                                           You are FAIL... `
+                }
+
+            }
+
+
+
+        }
+    </script>
+</body>
+
+</html>
